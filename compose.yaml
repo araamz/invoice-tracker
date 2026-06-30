@@ -1,0 +1,25 @@
+# Apache Kafka - Worker Queue for Async Operations
+# RustFS - Block Sotrage for Invoice Files
+# ASP.NET - Backend
+# Auth - Maybe ASP.NET Identiy???
+# React - Frontend
+services:
+  database:
+    image: postgres:15.18-trixie
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+    volumes:
+      - db-data:/var/lib/postgresql
+    ports:
+      - "5432:5432"
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    environment:
+      PGADMIN_DEFAULT_EMAIL: postgres@dev.com
+      PGADMIN_DEFAULT_PASSWORD: postgres
+    ports:
+      - "8080:80"
+volumes:
+  db-data:
