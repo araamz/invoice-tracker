@@ -13,7 +13,9 @@ builder.Services.AddControllers();
 builder.Services.AddDbContext<DatabaseContext>(options => 
     options.UseNpgsql(builder.Configuration.GetConnectionString("DatabaseConnection")));
 
-builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie();
+// builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => 
+//     options.LoginPath = "/Account/Login"
+//     );
 
 var app = builder.Build();
 

@@ -10,7 +10,7 @@ public class Business
     [Required, MaxLength(50)]
     public required string Name { get; set; }
     
-    [Required]
+    [Required, MaxLength(50)]
     public required string Address { get; set; }
     
     [Required, MaxLength(50)]

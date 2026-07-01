@@ -5,6 +5,7 @@ namespace backend.Models;
 
 public class User : IdentityUser<Guid>
 {
+    
     [Required, MaxLength(50)]
     public required string FirstName { get; init; }
     

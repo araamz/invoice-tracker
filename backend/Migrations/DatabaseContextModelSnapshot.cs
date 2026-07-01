@@ -64,7 +64,7 @@ namespace backend.Migrations
 
                     b.HasKey("BusinessId");
 
-                    b.ToTable("Businesses");
+                    b.ToTable("Businesses", (string)null);
                 });
 
             modelBuilder.Entity("backend.Models.BusinessUser", b =>
@@ -97,7 +97,7 @@ namespace backend.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BusinessUsers");
+                    b.ToTable("BusinessUsers", (string)null);
                 });
 
             modelBuilder.Entity("backend.Models.User", b =>
@@ -160,7 +160,7 @@ namespace backend.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("backend.Models.BusinessUser", b =>
