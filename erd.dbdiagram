@@ -1,0 +1,47 @@
+// FOR VIEWING USE THE LINK: https://dbdiagram.io/d
+
+Enum UserRole {
+  Owner
+  Manager
+  Employee
+  Auditor
+}
+
+Table User {
+  UserId uuid [primary key]
+  FirstName varchar(20)
+  LastName varchar(20)
+  Username varchar(40)
+  Email varchar(40)
+}
+
+Table BusinessUser {
+  UserId uuid [ref: > User.UserId, primary key]
+  BusinessId uuid [ref: > Business.BusinessId, primary key]
+
+  Role UserRole
+  AccessRevoked boolean
+
+  CreatedOn timestamp
+  RevokedOn timestamp
+}
+
+Table Business {
+  BusinessId uuid [primary key]
+  BusinessName varchar(40)
+}
+
+Table Distributor {
+  DistributorId uuid [primary key]
+  DistributorCode varchar(40)
+}
+
+// Table BusinessInvoice {
+//   BusinessInvoiceId uuid [primary key]
+//   QuantityShipped decimal(2, 2)
+//   QuantityRequested decimal(2, 2)
+
+//   UnitQuantity int
+//   UnitPrice decimal(2,5)
+
+// }
